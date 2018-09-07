@@ -1,5 +1,5 @@
 # TTML
-TTML is a lightweight markup generator that can produce almost any form of markup from XML,HTML and many more just name them.
+TTML is a lightweight language that compiles to almost any form of markup from XML,HTML and many more just name them.
 
 The ttml gem allows you to just write the skeleton of Markup then converts it to actual markup on the fly eg:
 

@@ -3,7 +3,7 @@ require "ttml/shortcut"
 require "erb"
 #= TTML(Taxi To Markup Language) [file extension: (*.ttml)]
 #
-#TTML is a simple markup generating engine that produces markup in a faster, simpler and cleaner way, 
+#TTML is a lighweight language that complies to Markup, TTML helps produce markup in a faster, simpler and cleaner way, 
 #basically you write the skeleton of a markup and it converts it into the actual markup that you had desired on the fly
 #
 #TTML supports erb templates so you can use it here but you have to enable erb during execution so that it can be processed
