@@ -1,0 +1,194 @@
+ tr{
+     th{Taxi}
+     th{HTML}
+    }
+   tr{
+     td{ht}
+     td{html}
+      }
+      tr{
+     td{doc5}
+     td{&lt!DOCTYPE html&gt}
+      }
+     tr{
+     td{utf8}
+     td{&ltmeta charset="UTF-8"/&gt}
+      } 
+      tr{
+     td{view1}
+     td{&ltmeta name="viewport" content="width=device-width, initial-scale=1.0"/&gt}
+     }
+	  tr{
+     td{xml}
+     td{&lt?xml version="1.0" encoding="UTF-8"?&gt}
+     }
+       tr{
+     td{d}
+     td{div}
+      }
+    tr{
+      td{hd}
+      td{head}
+      }
+	  tr{
+      td{mq}
+      td{marquee}
+      }
+     tr{
+       td{tt}
+       td{title}
+      }
+	   tr{
+       td{sm}
+       td{small}
+      }
+	   tr{
+       td{str}
+       td{strong}
+      }
+	   tr{
+       td{opt}
+       td{option}
+      }
+	   tr{
+       td{sel}
+       td{select}
+      }
+      tr{
+       td{bq}
+       td{blockquote}
+      }
+      tr{
+       td{sec}
+       td{section}
+      }
+      tr{
+       td{can}
+       td{canvas}
+      }
+      tr{
+       td{sp}
+       td{span}
+      }
+      tr{
+       td{ft}
+       td{footer}
+      }
+      tr{
+       td{hdr}
+       td{header}
+      }
+      tr{
+       td{ad}
+       td{audio}
+      }
+      tr{
+       td{vd}
+       td{video}
+      }
+      tr{
+       td{ifr}
+       td{iframe}
+      }
+      tr{
+       td{tbl}
+       td{table}
+      }
+      tr{
+       td{fm}
+       td{form}
+      }
+      tr{
+       td{in}
+       td{input}
+      }
+      tr{
+       td{txt}
+       td{textarea}
+      }
+      tr{
+       td{add}
+       td{address}
+      }
+      tr{
+       td{asd}
+       td{aside}
+      }
+      tr{
+       td{btn}
+       td{button}
+      }
+      tr{
+       td{emb}
+       td{embed}
+      }
+      tr{
+       td{scp}
+       td{script}
+      }
+      tr{
+       td{stl}
+       td{style}
+      }
+      tr{
+       td{lk}
+       td{link}
+      }
+      tr{
+       td{mt}
+       td{meta}
+      }
+	  tr{
+       td{cd}
+       td{code}
+      }
+	  tr{
+	     td{<b>Below is the meta package [x or y] is the value you want to set</b>}
+	  }
+      tr{
+       td{--k x,y}
+       td{&ltmeta name="keywords" content="x,y"/&gt}
+      }
+      tr{
+       td{--d x}
+       td{&ltmeta name="description" content="x"/&gt}
+      }
+      tr{
+       td{--ch x}
+       td{&ltmeta charset="x"/&gt}
+      }
+      tr{
+       td{--vp x}
+       td{&ltmeta name="viewport" content="width=device-width,initial-scale=x"/&gt}
+      }
+      tr{
+       td{--ic x}
+       td{&ltlink rel="icon" href="x"/&gt}
+      }
+      tr{
+       td{--t x}
+       td{&lttitle&gtx&lt/title&gt}
+      }
+      tr{
+       td{--sp x}
+       td{&ltscript src="x"&gt&lt/script&gt}
+      }
+      tr{
+       td{--st x}
+       td{&ltlink rel="stylesheet" href="x"/&gt}
+      }
+     tr{
+       td{--d x}
+       td{&ltmeta name="description" content="x"/&gt}
+      }
+	  tr{
+	     td{<b>The tag below is used to describe your own meta tags</b>}
+	  }
+	tr{
+	   td{--s namex = contenty}
+	     td{&ltmeta name="namex" content="contenty"/&gt}
+	}
+	tr{
+       td{--p property = content}
+       td{&ltmeta property="property" content="content"/&gt}
+      }

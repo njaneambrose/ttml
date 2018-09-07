@@ -1,0 +1,56 @@
+doc5
+ ht{
+   &ttml/headers.ttml
+   bd{
+      d !container!{
+        d !col-md-12!{
+	  h1 !text-center!{TTML}
+	  h3 !text-center!{Less talk More action}
+	  span id="theme" class="fa fa-bars" style="font-size:26px;cursor: pointer"{}
+	  &ttml/menu.ttml
+	  hr
+	}
+	p{
+	#Below is a simple IDE for TTML, type the code in the upper area and press compile to get results<br>
+	#This is not a place to do your projects, just a place to familiarize yourself with TTML syntax or try some ERB code
+	}
+	bq{
+	 #Imports are not enabled for compile method but work for Launch method<br>
+	 #Feel free to try anything else in this IDE<br>
+	 #Your output will appear at the lower area<br>
+	 #Type in your test code, configure erb and shortcut then press compile<br>
+	 #The lauch method opens a webpage generated from the markup you typed in the editor<br>
+	 #For launch erb and shortcut must always be checked<br>
+	}
+	d !col-md-12!{
+	fm method="get" action="/test"{
+	d !col-md-12!{
+	    d !col-md-4!{
+		label !control-label!{ERB}
+	    in !erb! type="checkbox" name="erb" value="true" checked
+		}
+		d !col-md-4!{
+		label !control-label!{Shortcuts}
+		in !cut! type="checkbox" name="cut" value="true" checked
+		}
+		d !col-md-4!{
+		  btn !btn btn-default xhr! type="button"{Compile}
+		  btn !btn btn-default! type="submit"{Launch}
+		}
+	}
+	   txt !col-md-12 type! spellcheck="false" placeholder="type your code here........" name="q"{}
+	}
+	d !col-md-12 lies !{
+	 #your output code appears here....
+	}
+      }	
+      }
+   }
+   scp src="assets/jquery.js"{}
+    scp src="assets/process.js"{}
+   scp{
+   %
+   &assets/script.js
+   %
+   }
+ }

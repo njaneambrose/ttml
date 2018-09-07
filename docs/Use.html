@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- This section contains head section for the project -->
+<meta charset="UTF-8">
+<meta name="Viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Information concerning the release of TTML">
+<title>TTML</title>
+<link rel="stylesheet" href="assets/bootstrap.css">
+<link rel="stylesheet" href="assets/font.css">
+<style>
+.container{overflow: hidden}
+body{font-family:"source sans pro",sans serif;font-size: 15px;background: #525659;color:#333333}
+.container{box-shadow:0 2px 6px rgba(0,0,0,.63);background:#fff;margin-top:45px;margin-bottom:10px;padding-bottom:10px}
+.code{font-family:Source code pro;color: #fff;font-size:13px}
+.des{color: cornflowerblue}
+blockquote{font-size: 15px;border-left-color:cornflowerblue}
+pre{background:#333333;font-size: 14px}
+.com{color: lightgreen}
+.pop-menu{position:absolute;z-index:20;box-shadow:0 2px 4px rgba(0,0,0,.222);border-radius:1px;background:#fff;padding:10px;
+transition: 0.3s all ease;margin-left:-350px}
+.pop-menu.active{transition: 0.3s all ease;margin-left: -10px}
+.pop-menu li a{color: #777777;transition:0.3s all ease;padding-top: 3px;padding-bottom: 3px;cursor:pointer}
+.pop-menu li a:hover{background:transparent;opacity: 0.7;transition:0.3s all ease}
+.in{color: deeppink}
+.nm{color: lime}
+#one,#two{position: absolute;z-index:10;background:white;box-shadow: 0 2px 4px rgba(0,0,0,.233);transition: 0.3s all ease;opacity:0;transform: scale(0)}
+#one.active,#two.active{transition: 0.3s all ease;margin-left:100px;opacity:1;transform: scale(1)}
+.type{min-height:500px;color:#38a4ff;font-family:Source code pro;overflow-x:scroll;font-size:13px;border-left:2px solid #aaa;margin-top:10px;background:#333;padding:5px;box-shadow: 0 2px 4px rgba(0,0,0,.222)}
+.lies{min-height:100px;max-height:500px;font-family:Source code pro;overflow-y:auto;overflow-x:scroll;font-size:13px;box-shadow: 0 2px 4px rgba(0,0,0,.322);margin-top:10px;padding:5px;
+border:2px solid #aaa;background:#333;color:gold}
+.code.out{color:#38a4ff;font-weight:500}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="use col-md-12">
+<h1 class="text-center">TTML</h1>
+<h3 class="text-center">Less talk More action</h3>
+<span id="theme" class="fa fa-bars" style="font-size: 26px;cursor:pointer"></span>
+<div class="pop-menu col-md-3">
+<ul id="one" class="nav col-md-8 col-md-offset-2 sub-menu">
+<li><a href="Documentation.html#intro">Introduction</a></li>
+<li><a href="Documentation.html#html">HTML</a></li>
+<li><a href="Documentation.html#xhtml">XHTML</a></li>
+<li><a href="Documentation.html#examples">Examples</a></li>
+<li><a href="Documentation.html#erb">ERB</a></li>
+<li><a href="Documentation.html#mark">XML</a></li>
+<li><a href="Documentation.html#imports">Imports</a></li>
+<li><a href="Documentation.html#short">Shortcuts</a></li>
+<li class="hide"><a href="Documentation.html#tags">User defined tags</a></li>
+<li><a href="Documentation.html#attr">Attributes</a></li>
+<li><a href="Documentation.html#join">Join lines</a></li>
+</ul>
+<ul id="two" class="nav col-md-8 col-md-offset-2 sub-menu">
+<li><a href="use.html#intro">Introduction</a></li>
+<li><a href="use.html#test">test method</a></li>
+<li><a href="use.html#prototype">prototype method</a></li>
+<li><a href="use.html#pipe">pipe method</a></li>
+<li><a href="use.html#start">start method</a></li>
+<li><a href="use.html#dshort">Disabling shortcuts</a></li>
+<li class="hide"><a href="use.html#trick">Simple trick</a></li>
+</ul>
+<ul class="nav">
+<li ><a data-target="#one">Documentation</a></li>
+<li class="nav-divider"></li>
+<li><a data-target="#two">Get started</a></li>
+<li class="nav-divider"></li>
+<li><a href="try.html">Try it here!</a></li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="main">
+<h4 id="intro">This page shows you how to use the TTML gem</h4>
+<h3>Lets get started</h3>
+<hr>
+<div class="hide">
+<p>Download and install the ruby interpreter in your computer <a href="http://www.rubylang.org">Download now!</a></p>
+<p>If you already have it go to your command prompt and type:  <span class="code out">gem install ttml</span></p>
+<div class="alert alert-success">Good! lets start, Welcome to the TTML world</div>
+<p>For a simple startup and documentation go to the folder that  the gem was installed with, go to the docs folder and initialize the simple server at the file <span class="code out">serverBT.rb</span></p>
+<p>Go to your browser and type the url <b>http://localhost:1776/documentation</b> or <a href="http://localhost:1776/documentation">Click here!</a></p>
+<blockquote>
+The server at port 1776 offers documentation, how to use the ttml gem and a simple IDE to try out some TTML code
+</blockquote>
+<p>Go to your favourite Text editor and start enjoying TTML</p>
+</div>
+<h3 id="test">1. The test method</h3>
+<p>
+The test method gives you some kind of REPL environment where you can test various code and see results<br>
+This is the perfect place to work before starting serious projects<br>
+Check the example below to see:
+</p>
+<pre class="code">
+ <span class="com">#The following is ruby code</span>
+ <span class="des">require</span> 'ttml' <span class="com">#requires this file</span>
+ <span class="des">include</span> TTML <span class="com">#load this module to avoid using TTML::</span>
+ a =<<_ <span class="com">#this is a simple here document you want to pass into the interpreter</span>
+ body{
+  div class="container"{
+ p{Hello i am just testing the waters}
+  }
+ }
+ _
+ tax = Route.<span class="des">new(</span><span class="in">a</span><span class="des">)</span><span class="com">#we call the Route class with parameter a</span>
+ <span class="des">puts</span> tax.<span class="des">test</span> <span class="com">#we call the method</span>
+ <span class="com">#everthing you can do using an actual file you can do it here even imports</span>
+</pre>
+<h3 id="prototype">2. The prototype method</h3>
+<hr>
+<p>
+The prototype method enables you to open a file with TTML code run it but this method does not write output to any file<br>
+Good if you are not comfortable writing here documents as for test method<br>
+Example below:
+</p>
+<pre class="code">
+ <span class="com">#The following is ruby code</span>
+ <span class="des">require</span> 'ttml' <span class="com">#requires this file</span>
+ <span class="des">include</span> TTML <span class="com">#load this module to avoid using TTML::</span>
+ tax = Route.<span class="des">new(</span><span class="in">"test.ttml"</span><span class="des">)</span> <span class="com">#we call the Route class with parameter the file test.tax</span>
+ <span class="des">puts</span> tax.<span class="des">prototype</span> <span class="com">#we call the method</span>
+ <span class="com">#still there is no limitation feel free to explore</span>
+</pre>
+<h3 id="pipe">3. The pipe method</h3>
+<hr>
+<P>
+This method is used with kind of test method only that you write the output to a file supplied<br>
+Just good to show you this works at least some lasting result<br>
+Example below:
+</P>
+<pre class="code">
+ <span class="com">#The following is ruby code</span>
+ <span class="des">require</span> 'ttml' <span class="com">#requires this file</span>
+ <span class="des">include</span> TTML<span class="com"> #load this module to avoid using TTML::</span>
+ a =<<_ <span class="com">#this is a simple here document you want to pass into the interpreter</span>
+  body{
+  div class="container"{
+ p{Hello i am just testing the waters}
+  }
+ }
+ _
+ tax = Route.<span class="des">new(</span><span class="in">a,false,"test.html"</span><span class="des">)</span> <span class="com">#we call the Route class with parameter a and test.html where the data is written</span>
+ tax.<span class="des">pipe</span> <span class="com">#we call the method the file is created if not existing and overwritten if existing</span>
+</pre>
+<h3 id="start">4. The start method</h3>
+<hr>
+<p>
+This method is like a full pipe method where you can open a taxi file interpret it then write it to a supplied file<br>
+This is the professional way to go if you are working on projects<br>
+Example below:
+</p>
+<pre class="code">
+ <span class="com">#The following is ruby code</span>
+ <span class="des">require</span> 'ttml' <span class="com">#requires this file</span>
+ <span class="des">include</span> TTML <span class="com">#load this module to avoid using TTML::</span>
+ tax = Route.<span class="des">new(</span><span class="in">"test.ttml",false,"test.html"</span><span class="des">)</span> <span class="com">#we call the Route class with two parameters what to interpret and where to write</span>
+ tax.<span class="des">start</span> <span class="com">#we call the method</span>
+ <span class="com">#you may supply different files as your desired output eg: xml,xhtml,html,... files</span>
+</pre>
+<div class="alert alert-info hide">
+Once you go professoinal create a file with all the configurations to produce diffrent files in your project so that you only double click or run the file and all the files all compiled at one go<br>
+Hence you will focus on producing code and instantly looking at the product even if they are multiple files
+</div>
+<h3 id="dshort">5. Disabling Shortcuts</h3>
+<hr>
+<p>
+Shortcuts are useful as they give you faster ways to reach your target<br>
+But sometimes may turn against you, check this example of how to pass code for interpretation without shortcuts<br>
+To do this you will have to pass all the four variables required.
+</p>
+<blockquote>The variable/file where your TTML code is, true or false for erb, where to output (if you do not output to a file write String.new), true|false for shortcuts</blockquote>
+<pre class="code">
+ <span class="com">#for the test method</span>
+ tax = Route.<span class="des">new(</span><span class="in">a,false,String.new,false</span><span class="des">)</span>
+ tax.<span class="des">test</span>
+ <span class="com">#for prototype method</span>
+ tax = Route.<span class="des">new(</span><span class="in">"test.ttml",false,String.new,false</span><span class="des">)</span>
+ tax.<span class="des">prototype</span>
+ <span class="com">#for pipe method</span>
+ tax = Route.<span class="des">new(</span><span class="in">a,false,"pipe.ttml",false</span><span class="des">)</span>
+ tax.<span class="des">pipe</span>
+ <span class="com">#for start method</span>
+ tax = Route.<span class="des">new(</span><span class="in">"data.ttml",false,"data.xml",false</span><span class="des">)</span>
+ tax.<span class="des">start</span>
+</pre>
+<h3 id="trick" class="hide">Simple Trick with the interpreter</h3>
+<hr class="hide">
+<p class="hide">
+This was not part of the original plan but it actually works<br>
+You can actually join different files with the import feature<br>
+See the simple example below:
+</p>
+<pre class="code hide">
+ <span class="com">#The following is ruby code</span>
+ <span class="des">require</span> 'ttml' <span class="com">#requires this file</span>
+ <span class="des">include</span> TTML <span class="com">#load this module to avoid using TTML::</span>
+ a =<<_ <span class="com">#this is a simple here document you want to pass into the interpreter</span>
+ % <span class="com">#this % prevent our imports from being executed</span>
+ &file.rb
+ &file2.rb
+ &file3.rb
+ %
+ _
+ T = Route.<span class="des">new(</span><span class="in">a, "main.rb"</span><span class="des">)</span> <span class="com">#we call the Route class with parameter a and test.html where the data is written</span>
+ T.<span class="des">pipe</span> <span class="com">#we call the method</span>
+ <span class="com">#this opens all the files supplied as imports and writes the to main.rb done! all files are joined</span>
+</pre>
+</div>
+</div>
+</body>
+<script src="assets/jquery.js"></script>
+<script>
+$(document).ready(function(){
+$("#theme").click(function (){
+$(".pop-menu").toggleClass("active");
+$(this).toggleClass("fa-close fa-bars");
+});
+$(".pop-menu li a").click(function(){
+var tg = $(this).attr("data-target");
+if (tg == "#one"){
+$("#two").removeClass("active");
+}else{
+$("#one").removeClass("active");
+}
+$(tg).toggleClass("active");
+})
+$(".table").hide();
+$(".tagged").click(function (){
+$(".table").slideToggle(600);
+})
+});
+</script>
+</html>

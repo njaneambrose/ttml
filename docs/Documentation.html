@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- This section contains head section for the project -->
+<meta charset="UTF-8">
+<meta name="Viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Information concerning the release of TTML">
+<title>TTML</title>
+<link rel="stylesheet" href="assets/bootstrap.css">
+<link rel="stylesheet" href="assets/font.css">
+<style>
+.container{overflow: hidden}
+body{font-family:"source sans pro",sans serif;font-size: 15px;background: #525659;color:#333333}
+.container{box-shadow:0 2px 6px rgba(0,0,0,.63);background:#fff;margin-top:45px;margin-bottom:10px;padding-bottom:10px}
+.code{font-family:Source code pro;color: #fff;font-size:13px}
+.des{color: cornflowerblue}
+blockquote{font-size: 15px;border-left-color:cornflowerblue}
+pre{background:#333333;font-size: 14px}
+.com{color: lightgreen}
+.pop-menu{position:absolute;z-index:20;box-shadow:0 2px 4px rgba(0,0,0,.222);border-radius:1px;background:#fff;padding:10px;
+transition: 0.3s all ease;margin-left:-350px}
+.pop-menu.active{transition: 0.3s all ease;margin-left: -10px}
+.pop-menu li a{color: #777777;transition:0.3s all ease;padding-top: 3px;padding-bottom: 3px;cursor:pointer}
+.pop-menu li a:hover{background:transparent;opacity: 0.7;transition:0.3s all ease}
+.in{color: deeppink}
+.nm{color: lime}
+#one,#two{position: absolute;z-index:10;background:white;box-shadow: 0 2px 4px rgba(0,0,0,.233);transition: 0.3s all ease;opacity:0;transform: scale(0)}
+#one.active,#two.active{transition: 0.3s all ease;margin-left:100px;opacity:1;transform: scale(1)}
+.type{min-height:500px;color:#38a4ff;font-family:Source code pro;overflow-x:scroll;font-size:13px;border-left:2px solid #aaa;margin-top:10px;background:#333;padding:5px;box-shadow: 0 2px 4px rgba(0,0,0,.222)}
+.lies{min-height:100px;max-height:500px;font-family:Source code pro;overflow-y:auto;overflow-x:scroll;font-size:13px;box-shadow: 0 2px 4px rgba(0,0,0,.322);margin-top:10px;padding:5px;
+border:2px solid #aaa;background:#333;color:gold}
+.code.out{color:#38a4ff;font-weight:500}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="head col-md-12">
+<h1 class="text-center">TTML</h1>
+<h3 class="text-center">Less talk More action</h3>
+<span id="theme" class="fa fa-bars" style="font-size:26px;cursor: pointer"></span>
+<div class="pop-menu col-md-3">
+<ul id="one" class="nav col-md-8 col-md-offset-2 sub-menu">
+<li><a href="Documentation.html#intro">Introduction</a></li>
+<li><a href="Documentation.html#html">HTML</a></li>
+<li><a href="Documentation.html#xhtml">XHTML</a></li>
+<li><a href="Documentation.html#examples">Examples</a></li>
+<li><a href="Documentation.html#erb">ERB</a></li>
+<li><a href="Documentation.html#mark">XML</a></li>
+<li><a href="Documentation.html#imports">Imports</a></li>
+<li><a href="Documentation.html#short">Shortcuts</a></li>
+<li class="hide"><a href="Documentation.html#tags">User defined tags</a></li>
+<li><a href="Documentation.html#attr">Attributes</a></li>
+<li><a href="Documentation.html#join">Join lines</a></li>
+</ul>
+<ul id="two" class="nav col-md-8 col-md-offset-2 sub-menu">
+<li><a href="use.html#intro">Introduction</a></li>
+<li><a href="use.html#test">test method</a></li>
+<li><a href="use.html#prototype">prototype method</a></li>
+<li><a href="use.html#pipe">pipe method</a></li>
+<li><a href="use.html#start">start method</a></li>
+<li><a href="use.html#dshort">Disabling shortcuts</a></li>
+<li class="hide"><a href="use.html#trick">Simple trick</a></li>
+</ul>
+<ul class="nav">
+<li ><a data-target="#one">Documentation</a></li>
+<li class="nav-divider"></li>
+<li><a data-target="#two">Get started</a></li>
+<li class="nav-divider"></li>
+<li><a href="try.html">Try it here!</a></li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="intro">
+<div class="intro-top" id="intro">
+<b>
+<p>What is TTML?</p>
+</b>
+<p>TTML is a shortform for (<b>Taxi To Markup Language</b>)</p>
+<p>TTML is a lightweight language that compiles to Markup it extends normal markup language and providing a quicker and cleaner way to generate markup on the fly</p>
+<b>
+<p>Why TTML?</p>
+</b>
+<ul>
+<li>Easy to learn</li>
+<li class="hide">Allows you to define your own tags like XML</li>
+<li>Library of shortened HTML tags making your work easier (Shortcuts)</li>
+<li>Easier ways of declaring common attributes eg:class, id,....</li>
+<li>Allows imports from other files</li>
+<li>Not dependent on indentation to code</li>
+<li>Can produce almost any markup eg: HTML,XML,XHTML..</li>
+<li>Saves time</li>
+<li>Has extension where you can write your normal markup in your file</li>
+<li>Produces indented code (depending on how you type your code + an option to join lines of your code)</li>
+<li>ERB templating support</li>
+<li class="hide">Saves space, 70% smaller than XML and 86% smaller than JSON holding the same data</li>
+</ul>
+<h3 class="text-center">Basic Things in using TTML</h3>
+<hr>
+<div class="basic-info">
+<blockquote>
+You need to at least basic experience in Markup language to use TTML
+<br>
+If you have this it will take less than thirty minutes to get started
+<br>
+This documentation was created using TTML by the way then converted to HTML <br>
+To see code add /ttml to any page url in this website eg: /documentation/ttml
+</blockquote>
+<p>Below we are going to introduce you to the basic syntax that you need to know:</p>
+</div>
+</div>
+<div class="intro-mid">
+<h3 >Symbols</h3>
+<p>
+<span class="code out"># => </span>
+used to indicate you want the interpreter to ignore this line
+<br>
+<span class="code out">! => </span>
+Used for comments(TTML) this do not appear in your final product<br>
+<span class="code out">% => </span>
+ used to ignore multiple lines until the next (%) which indicates the end of that section
+<br>
+<span class="code out">{} => </span>
+used for tags
+<br>
+<span class="code out">& => </span>
+used for imports
+<br>
+Lastly, between the exclamation marks we declare some common attributes class or id or href or src or just all of them, your choice.
+<br>
+<div class="alert alert-warning">
+We want to make it clear now that each element should go on a separate line no matter what even if it is a closing brace for tags that exceed a single line<br>
+Do not put TTML code inside another TTML brace unless on different lines eg: sp{a !@http://google.com!{google} }, this link will be treated as plain text hence not interpreted<br>
+For the above example if it is a must do this:  sp{&lta href="http://google.com"&gtgoogle&lt/a&gt}, that will do it<br>
+Do not close a multi line tags behind another one eg: d {.........several lines sp{hello}}, the last brace should go on a separate line for your code to be properly executed<br>
+The output will only appear indented if your code was indented<br>
+Look at the syntax expressed in the examples below to understand what we mean
+</div>
+<div class="alert alert-danger">
+Avoid leaving blank lines in the middle of your code especially within tags<br>
+Actually the product code is indented so there is no need for blank lines<br>
+if an error occurs something like ......undefined method  '[]'..., look for blank lines in your code(especially within tags) and remove them
+</div>
+</p>
+<blockquote>
+Imagine that is all plus your Knowledge in Markup and other <br>
+If you feel uncomfortable just go to the menu and click <a href="http://localhost:1776/trynow">Try it here!</a> type and compile the code to see the results yourself
+</blockquote>
+<p>We will have TTML code on one side and Markup code on the other side</p>
+<h3 class="text-center" id="html">Lets start with HTML</h3>
+<hr>
+<div class="col-md-12">
+<div class="col-md-6">
+<pre class="code">
+<span class="com">!This is a TTML comment it will not appear in your product</span>
+<span class="code">#&lt!-- This is simple --&gt</span>
+<span class="des">body{</span>
+   <span class="des">div</span> <span class="nm">class</span>=<span class="in">"col-md-6"</span><span class="des">{</span>
+      <span class="des">p{</span>Hello World!!<span class="des">}</span>
+    <span class="des">}</span>
+   <span class="des">audio</span> <span class="nm">src</span>=<span class="in">"Good_life.mp3"</span> <span class="nm">controls</span>
+<span class="des">}</span>
+</pre>
+</div>
+<div class="col-md-6">
+<pre class="code">
+<span class="com">&lt!-- This is simple --&gt</span>
+<span class="des">&ltbody&gt</span>
+    <span class="des">&ltdiv</span> <span class="nm">class</span>=<span class="in">"col-md-6"</span><span class="des">&gt</span>
+       <span class="des">&ltp&gt</span>Hello World!!<span class="des">&lt/p&gt</span>
+    <span class="des">&lt/div&gt</span>
+    <span class="des">&ltaudio</span> <span class="nm">src</span>=<span class="in">"Good_life.mp3"</span> <span class="nm">controls</span><span class="des">&gt</span>
+<span class="des">&lt/body&gt</span>
+
+</pre>
+</div>
+<P >
+I hope that simple example has been understood
+<br>
+ <span class="code out">{}</span> indicate the start and end of tags all the content you want inside should go in the braces
+<br>
+ text goes between the curly braces eg: <span class="code out">p{hello} to &ltp&gthello&ltp&gt</span>
+<br>
+Multi line tags eg: body in the example <span class="code out">body{ and close this tag where you want body to end }</span>
+<br>
+Single line tags with no text are just quick to handle eg: <span class="code out">img src="one.png" to &ltimg src="one.png"&gt</span>
+<br>
+The comments that you do not want to appear in your final product are wiritten after !
+</P>
+<blockquote>
+Lets extend this TTML code using HTML as we said this language is not limiting<br/>
+You can even write your whole TTML code with HTML<br/>
+Check out below:
+</blockquote>
+<pre class="code col-md-12">
+<span class="code">#&lt!-- writing html code in TTML code --&gt</span>
+<span class="des">P{</span>
+ <span class="code">#This is a line in a multiline stament</span>
+ <span class="des">br</span>
+ <span class="code">#This is another line<span class="des">&ltbr&gt</span></span>
+ <span class="code">#&lt--This # sign indicate that this line should not be executed--&gt</span>
+ <span class="code">#This is <span class="des">&ltspan</span> <span class="nm">class</span>=<span class="in">"insert"</span><span class="des">&gt</span>inserting html code<span class="des">&lt/span&gt</span></span>
+ <span class="des">}</span>
+ <span class="des">%</span>
+ <span class="com">&ltp&gtthis is inserting actual html code between % sings&lt/p&gt</span>
+ <span class="com">&ltp&gtYou can write even the whole document in html as long is it is between % signs or after the # signs&lt/p&gt</span>
+ <span class="des">%</span>
+</pre>
+<pre class="col-md-12 code">
+ <span class="com">&lt!-- writing html code in TTML code --&gt</span>
+ <span class="des">&ltp&gt</span>
+ This is a line in a multi line statement
+ <span class="des">&ltbr&gt</span>
+ This is another line<span class="des">&ltbr&gt</span>
+ <span class="com">&lt!--This # sign indicate that this line should not be executed--&gt</span>
+ <span class="code">This is <span class="des">&ltspan</span> <span class="nm">class</span>=<span class="in">"insert"</span><span class="des">&gt</span>inserting html code<span class="des">&lt/span&gt</span></span>
+ <span class="des">&lt/p&gt</span>
+ <span class="code"><span class="des">&ltp&gt</span>this is inserting actual html code between % sings<span class="des">&lt/p&gt</span></span>
+ <span class="code"><span class="des">&ltp&gt</span>You can write even the whole document in html as long is it is between % signs or after the # signs<span class="des">&lt/p&gt</span></span>
+</pre>
+<p>
+ <span class="code out">=></span> After the <span class="code out">#</span> sign or between <span class="code out">%</span> signs you can add HTML code<br/>
+ <span class="code out">=></span> When writing check what is the best option at that area to maximize productivity
+</p>
+<blockquote>
+You can use HTML especially between text to make work easier<br/>
+You can HTML or any other language between <span class="code out"> % and % </span>,
+you are not limited to HTML but also can be used for <span class="code out">style,script,PHP,text,...</span>
+</blockquote>
+<h3 class="text-center" id="xhtml">Some XHTML</h3><hr/>
+<p>This syntax is not so different from <b>HTML</b> but with simple modification see below:</p>
+<P>
+ <span class="code out">=></span> When using XHTML use <span class="code out">img src="one.png"/</span> to produce <span class="code out">&ltimg src="one.png"/&gt</span> or<br/>
+ <span class="code out">=></span> <span class="code out">img src="one.png"{}</span> to produce <span class="code out">&ltimg src="one.png"&gt&lt/img&gt</span><br/>
+ <span class="code out">=></span> You can use any of the two methods above to ensure that all your tags are all closed
+</P>
+<h3 class="text-center" id="examples">Other Examples</h3>
+<hr>
+<div class="col-md-6">
+<h4 class="text-center">PHP example</h4>
+<pre class="code">
+<span class="des">body{</span>
+ <span class="code">#&lt!--PHP example --&gt</span>
+<span class="des">%</span>
+<span class="code">#&lt!-- The % signs prevent the execution of this PHP code --&gt</span>
+  <span class="com">&lt?php</span>
+ <span class="com">echo "Hello world!!"</span>
+  <span class="com">?&gt</span>
+<span class="des">%</span>
+<span class="des">}</span>
+</pre>
+<h4 class="text-center">Javascript/CSS example</h4>
+<pre class="code">
+<span class="des">body{</span>
+  <span class="code">#&lt!-- Javascript and CSS example --&gt</span>
+  <span class="des">style</span> <span class="nm">type</span>=<span class="in">"text/css"</span><span class="des">{</span>
+  <span class="des">%</span>
+  <span class="com">body{background: #333}</span>
+  <span class="com">p{color: white}</span>
+  <span class="des">%</span>
+  <span class="des">}</span>
+  <span class="des">script</span> <span class="nm">type</span>=<span class="in">"text/javascript"</span><span class="des">{</span>
+  <span class="des">%</span>
+    <span class="com">window.onload=function (){</span>
+      <span class="com">alert("This is TTML");</span>
+   <span class="com">}</span>
+  <span class="des">%</span>
+  <span class="des">}</span>
+<span class="des">}</span>
+</pre>
+</div>
+<div class="col-md-6">
+<h4 class="text-center">ERB example</h4>
+<pre class="code">
+ <span class="code">#&lt!-- ERB example --&gt</span>
+ <span class="des">body{</span>
+   <span class="des">table</span> <span class="nm">border</span>=<span class="in">3</span><span class="des">{</span>
+     <span class="code"><%ENV.keys.each do |e|%></span>
+      <span class="des">tr{</span>
+        <span class="des">th{</span><%=e%><span class="des">}</span>
+        <span class="des">td{</span><%=ENV[e]%><span class="des">}</span>
+      <span class="des">}</span>
+    <span class="code"><%end%></span>
+   <span class="des">}</span>
+ <span class="code"><%a="hello world"%></span>
+ <span class="des">p{</span><%=a%><span class="des">}</span>
+<span class="des">}</span>
+</pre>
+</div>
+<blockquote id="erb" class="col-md-12">
+After the <span class="code out"># or between % and %</span> you can put any language or normal text<br>
+TTML offers native support for ERB templating you can add erb code in your file like the example above<br>
+The erb is executed during interpretation to Markup, but to do this you have <b>to initialize the Route class with true parameter as erb is not enabled by default</b><br>
+Use the following:<br>
+<div class="alert alert-success">
+tax = Route.new(a,true)   for test and prototype methods<br>
+tax = Route.new("test.ttml",true,"test.html") for pipe and start methods
+<br>
+You can use ERB to format the output to tags eg: mathematical operations and string formats eg: sp{<%="Hello".reverse%>} or sp{<%=566*5666%>}<br>
+</div>
+</blockquote>
+</div>
+<br>
+<h3 class="text-center">Lets check out XML</h3>
+<hr>
+<blockquote id="mark">
+This shall be quick and easy if you have basic knowledge in XML we shall not go into the advanced parts<br>
+TTML supports full XML syntax so no there is need to worry<br>
+This is a Quick example that gives the basic idea but you can explore more<br>
+</blockquote>
+<div class="xml">
+<div class="col-md-6">
+<pre class="code">
+<span class="code">#&lt!--This is xml language --&gt</span>
+<span class="des">students</span> <span class="nm">comment</span>=<span class="in">"new students"</span><span class="des">{</span>
+    <span class="des">student{</span>
+      <span class="des">name{</span>Scott<span class="des">}</span>
+      <span class="des">age{</span>17<span class="des">}</span>
+      <span class="des">home{</span>England<span class="des">}</span>
+    <span class="des">}</span>
+    <span class="des">student{</span>
+      <span class="des">name{</span>Mary<span class="des">}</span>
+      <span class="des">age{</span>23<span class="des">}</span>
+      <span class="des">home{</span>USA<span class="des">}</span>
+    <span class="des">}</span>
+<span class="des">}</span>
+</pre>
+</div>
+<div class="col-md-6">
+<pre class="code">
+<span class="com">&lt!--This is xml language --&gt</span>
+<span class="des">&ltstudents</span> <span class="nm">comment</span>=<span class="in">"new students"</span><span class="des">&gt</span>
+    <span class="des">&ltstudent&gt</span>
+       <span class="des">&ltname&gt</span>Scott<span class="des">&lt/name&gt</span>
+       <span class="des">&ltage&gt</span>17<span class="des">&lt/age&gt</span>
+       <span class="des">&lthome&gt</span>England<span class="des">&lt/home&gt</span>
+    <span class="des">&lt/student&gt</span>
+   <span class="des">&ltstudent&gt</span>
+       <span class="des">&ltname&gt</span>Mary<span class="des">&lt/name&gt</span>
+       <span class="des">&ltage&gt</span>23<span class="des">&lt/age&gt</span>
+       <span class="des">&lthome&gt</span>USA<span class="des">&lt/home&gt</span>
+    <span class="des">&lt/student&gt</span>
+<span class="des">&lt/students&gt</span>
+</pre>
+</div>
+</div>
+</div>
+<div class="importing" id="imports">
+<h3 class="text-center">Imports handling</h3>
+<hr>
+<P>
+To import a file begin a new line with <span class="code out">&X</span> where X is the name of the file you want to import<br/>
+For TTML files you do not need to add the file extension do <span class="code out">&header</span> to import header.ttml<br>
+The rules apply the same about  <span class="code out">#, % and %</span><br/>
+If you want a TTML file to be executed import it outside the  <span class="code out">% and %</span><br/>
+To import any other type of file eg a stylesheet, script file import it between <span class="code out">% and %</span><br/>
+check the example below:
+</P>
+<div class="alert alert-info">
+If you are importing a file and the file imports other files, all imports are solved hence the product will contain all imported files
+</div>
+<blockquote class="hide">
+If the file you are importing also has imports and continuing you will get all the data from the other files and all their imports<br>
+example: if you file imports <span class="code out">&help.ttml</span> then this file imports <span class="code out">&about.ttml</span> you will get both help.ttml and about.ttml in your file
+</blockquote>
+<pre class="code">
+<span class="des">!DOCTYPE html</span>
+<span class="des">html{</span>
+     <span class="code">#&lt!--Executing imports --&gt</span>
+     <span class="in">&header</span>
+     <span class="code">#&lt!--header.ttml is imported outside % signs hence executed to markup code --&gt</span>
+  <span class="des">body{</span>
+     <span class="des">section</span> <span class="nm">class</span>=<span class="in">"blogs"</span><span class="des">{</span>
+        <span class="in">&blog</span>
+     <span class="des">}</span>
+     <span class="des">footer{</span>
+      <span class="des">%</span>
+      <span class="in">&footer.html</span>
+      <span class="com">&lt!-- This is imported inside the % signs hence not executed just inserted the way it is --&gt</span>
+      <span class="des">%</span>
+     <span class="des">}</span>
+    <span class="code">#&lt!--importing php files--&gt</span>
+     <span class="des">%</span>
+      <span class="com">&lt?php</span>
+       <span class="in">&login.php</span>
+     <span class="com">?&gt</span>
+    <span class="des">%</span>
+  <span class="des">}</span>
+  <span class="des">script</span> <span class="nm">type</span>=<span class="in">"text/javascript"</span><span class="des">{</span>
+   <span class="des">%</span>
+     <span class="in">&path/to/script.js</span>
+   <span class="des">%</span>
+ <span class="des">}</span>
+<span class="des">}</span>
+</pre>
+</div>
+<div id="short" class="col-md-12">
+<h3 class="text-center">Shortcuts</h3>
+<hr>
+<p>All the other examples above have been written in a relatively familiar syntax but now lets dig into some TTML syntax</p>
+<blockquote>
+Shortcuts is a simple library with shortened commonly used HTML tags<br>
+Shortcuts are only executed as for TTML code not the Markup code you can write<br>
+They are meant to make your work as a developer much easier<br>
+Check out the example below to demonstrate that (the output is below):
+</blockquote>
+<pre class="code col-md-12">
+<span class="des">doc5</span>
+<span class="des">ht{</span>
+   <span class="des">hd{</span>
+     <span class="des">utf8</span>
+     <span class="des">view1</span>
+     <span class="com">--d</span> a simple startup site
+     <span class="des">tt{</span>TTML<span class="des">}</span>
+  <span class="des">}</span>
+  <span class="des">bd{</span>
+     <span class="des">sp{</span>Hello World<span class="des">}</span>
+    <span class="des">bq{</span>
+     #This is a line in a blockquote
+    <span class="des">}</span>
+  <span class="des">}</span>
+<span class="des">}</span>
+</pre>
+<pre class="code col-md-12">
+<span class="des">&lt!DOCTYPE html&gt</span>
+  <span class="des">&lthtml&gt</span>
+    <span class="des">&lthead&gt</span>
+      <span class="des">&ltmeta <span class="nm">charset</span>=<span class="in">"UTF-8"</span><span class="des">/&gt</span>
+      <span class="des">&ltmeta <span class="nm">name</span>=<span class="in">"viewport"</span><span class="nm"> content</span>=<span class="in">"width=device-width,initial-scale=1.0"</span><span class="des">/&gt</span>
+      <span class="des">&ltmeta <span class="nm">name</span>=<span class="in">"description"</span><span class="nm"> content</span>=<span class="in">"a simple startup site"</span><span class="des">/&gt</span>
+      <span class="des">&lttitle&gt</span><span class="code">TTML</span><span class="des">&lt/title&gt
+  <span class="des">&lt/head&gt</span>
+  <span class="des">&ltbody&gt</span>
+     <span class="des">&ltspan&gt</span><span class="code">Hello World</span><span class="des">&lt/span&gt
+   <span class="des">&ltblockquote&gt</span>
+    <span class="code">This is a line in a blockquote</span>
+   <span class="des">&lt/blockqoute&gt</span>
+ <span class="des">&lt/body&gt</span>
+<span class="des">&lt/html&gt</span>
+</pre>
+<p>
+This was just a sample of using shortened tags for tags in HTML<br>
+The aim was to shorten HTML tags to 2 or 3 characters for easier use<br>
+There is a whole library of these shortened tags that you may use to make your development faster<br>
+Check the table below that contains:
+</p>
+<p class="tagged com" style="cursor:pointer"><b>Shortcut table click here!</b></p>
+<table class="table table-hover table-bordered">
+<tr>
+<th>Taxi</th>
+<th>HTML</th>
+</tr>
+<tr>
+<td>ht</td>
+<td>html</td>
+</tr>
+<tr>
+<td>doc5</td>
+<td>&lt!DOCTYPE html&gt</td>
+</tr>
+<tr>
+<td>utf8</td>
+<td>&ltmeta charset="UTF-8"/&gt</td>
+</tr>
+<tr>
+<td>view1</td>
+<td>&ltmeta name="viewport" content="width=device-width, initial-scale=1.0"/&gt</td>
+</tr>
+<tr>
+<td>xml</td>
+<td>&lt?xml version="1.0" encoding="UTF-8"?&gt</td>
+</tr>
+<tr>
+<td>d</td>
+<td>div</td>
+</tr>
+<tr>
+<td>hd</td>
+<td>head</td>
+</tr>
+<tr>
+<td>mq</td>
+<td>marquee</td>
+</tr>
+<tr>
+<td>tt</td>
+<td>title</td>
+</tr>
+<tr>
+<td>sm</td>
+<td>small</td>
+</tr>
+<tr>
+<td>str</td>
+<td>strong</td>
+</tr>
+<tr>
+<td>opt</td>
+<td>option</td>
+</tr>
+<tr>
+<td>sel</td>
+<td>select</td>
+</tr>
+<tr>
+<td>bq</td>
+<td>blockquote</td>
+</tr>
+<tr>
+<td>sec</td>
+<td>section</td>
+</tr>
+<tr>
+<td>can</td>
+<td>canvas</td>
+</tr>
+<tr>
+<td>sp</td>
+<td>span</td>
+</tr>
+<tr>
+<td>ft</td>
+<td>footer</td>
+</tr>
+<tr>
+<td>hdr</td>
+<td>header</td>
+</tr>
+<tr>
+<td>ad</td>
+<td>audio</td>
+</tr>
+<tr>
+<td>vd</td>
+<td>video</td>
+</tr>
+<tr>
+<td>ifr</td>
+<td>iframe</td>
+</tr>
+<tr>
+<td>tbl</td>
+<td>table</td>
+</tr>
+<tr>
+<td>fm</td>
+<td>form</td>
+</tr>
+<tr>
+<td>in</td>
+<td>input</td>
+</tr>
+<tr>
+<td>txt</td>
+<td>textarea</td>
+</tr>
+<tr>
+<td>add</td>
+<td>address</td>
+</tr>
+<tr>
+<td>asd</td>
+<td>aside</td>
+</tr>
+<tr>
+<td>btn</td>
+<td>button</td>
+</tr>
+<tr>
+<td>emb</td>
+<td>embed</td>
+</tr>
+<tr>
+<td>scp</td>
+<td>script</td>
+</tr>
+<tr>
+<td>stl</td>
+<td>style</td>
+</tr>
+<tr>
+<td>lk</td>
+<td>link</td>
+</tr>
+<tr>
+<td>mt</td>
+<td>meta</td>
+</tr>
+<tr>
+<td>cd</td>
+<td>code</td>
+</tr>
+<tr>
+<td><b>Below is the meta package [x or y] is the value you want to set</b></td>
+</tr>
+<tr>
+<td>--k x,y</td>
+<td>&ltmeta name="keywords" content="x,y"/&gt</td>
+</tr>
+<tr>
+<td>--d x</td>
+<td>&ltmeta name="description" content="x"/&gt</td>
+</tr>
+<tr>
+<td>--ch x</td>
+<td>&ltmeta charset="x"/&gt</td>
+</tr>
+<tr>
+<td>--vp x</td>
+<td>&ltmeta name="viewport" content="width=device-width,initial-scale=x"/&gt</td>
+</tr>
+<tr>
+<td>--ic x</td>
+<td>&ltlink rel="icon" href="x"/&gt</td>
+</tr>
+<tr>
+<td>--t x</td>
+<td>&lttitle&gtx&lt/title&gt</td>
+</tr>
+<tr>
+<td>--sp x</td>
+<td>&ltscript src="x"&gt&lt/script&gt</td>
+</tr>
+<tr>
+<td>--st x</td>
+<td>&ltlink rel="stylesheet" href="x"/&gt</td>
+</tr>
+<tr>
+<td>--d x</td>
+<td>&ltmeta name="description" content="x"/&gt</td>
+</tr>
+<tr>
+<td><b>The tag below is used to describe your own meta tags</b></td>
+</tr>
+<tr>
+<td>--s namex = contenty</td>
+<td>&ltmeta name="namex" content="contenty"/&gt</td>
+</tr>
+<tr>
+<td>--p property = content</td>
+<td>&ltmeta property="property" content="content"/&gt</td>
+</tr>
+</table>
+<blockquote class="col-md-12">
+Its not a must you use this tags, you can continue using normal HTML tags until you are used to this syntax<br>
+The tags are meant to make your work easier<br>
+Some tags that are no listed here indicate we decided to go for the actual HTML tag e.g p,b,i<br>
+Learning to master this tags can come in handy in future projects
+</blockquote>
+<h3 id="tags" class="hide">Having your own tags</h3>
+<hr class="hide">
+<blockquote class="hide">
+TTML allows you to write your own tags like how you do with XML<br>
+This increases the efficiency in maintenance of your project as the tags are descriptive<br>
+But to use this feature you need basic knowledge in Ruby to be able to edit the <b>Shortcuts module</b><br>
+Check the simple example below:
+</blockquote>
+<pre class="code hide">
+#&lt!-- This is not XML but HTML --&gt
+<span class="des">single_blog{</span>
+  <span class="des">blog_name</span><span class="nm"> class</span>=<span class="in">"text-center"</span><span class="des">{</span>Growing trees<span class="des">}</span>
+  <span class="des">blog_release_date{</span>13-8-2018<span class="des">}</span>
+  <span class="des">blog_likes{</span>345<span class="des">}</span>
+  <span class="des">blog_comments{</span>45<span class="des">}</span>
+<span class="des">}</span>
+</pre>
+<p class="hide">
+Here is a simple explanation of how this example works<br>
+You can instruct the interpreter the following:<br>
+  <span class="code">single_blog => div</span><br>
+  <span class="code">blog_name => h3</span><br>
+  <span class="code">blog_release => p</span><br>
+  <span class="code">blog_likes|blog_comments => span</span><br>
+Whenever the compiler sees the tag <span class="code">&ltsingle_blog&gt</span> it knows you indicate <span class="code">&ltdiv&gt</span><br>
+ Hence it produces <span class="code">&ltdiv&gt</span> in your HTML product when interpreted and respectively for all other examples<br>
+ When editing you should supply the your tag and then the HTML tag it should represent
+</p>
+<h3>Disabling Shortcuts</h3>
+<hr>
+<blockquote>
+Shortcuts may be useful at times but sometimes can mess you up, maybe you are creating XML and the name of your tag was already declared as a shortcut<br>
+But do not worry we foresaw the challenge and made using Shortcuts optional<br>
+Shortcuts are enabled by default check <a href="/use#dshort">disabling shortcuts</a> to see how to disable them during execution
+</blockquote>
+<h3 id="attr" class="text-center">Attributes</h3>
+<hr>
+<blockquote>
+TTML provides you with a comfortable way of declaring attributes for tags<br>
+You can declare them as normal HTML attributes or TTML attributes(limited)<br>
+TTML attributes are limited to four most used tags that we observed: <span class="code out">class,id,href and src</span><br>
+This attributes are declared inside <span class="code out">!</span> and <span class="code out">!</span> signs and attributes separated by a comma<br>
+Check the example below:
+</blockquote>
+<pre class="code">
+ #&lt!-- This is a mashup of everything --&gt
+ <span class="des">d</span> <span class="com">!top_sect,wide-sect,#real,@http://www.youtube.com,>one.mp3!</span><span class="des">{}</span>
+</pre>
+<pre class="code">
+<span class="com">&lt!--This is a mashup of everything--&gt</span>
+<span class="des">&ltdiv</span> <span class="nm">class</span>=<span class="in">"top_sect wide-sect"</span> <span class="nm">id</span>=<span class="in">"real"</span> <span class="nm">href</span>=<span class="in">"http://www.youtube.com"</span> <span class="nm">src</span>=<span class="in">"one.mp3"</span><span class="des">&gt&lt/div&gt</span>
+</pre>
+<p>
+ Declare  <b>class</b> attribute by no additional text eg: <span class="code out">sp !red!{}</span> to <span class="code out">&ltspan class="red"&gt&lt/span&gt</span><br>
+ Declare  <b>id</b> attribute by prefixing with <span class="code out">#</span> eg: <span class="code out">sp !#red!{}</span> to <span class="code out">&ltspan id="red"&gt&lt/span&gt</span><br>
+ Declare <b>href</b> attribute by prefixing the link with <span class="code out">@</span> eg: <span class="code out">a !@http://google.com!{Google}</span> to <span class="code out">&lta href="http://google.com"&gtGoogle&lt/a&gt</span><br>
+ Declare <b>src</b> attribute by  prefixing source  with <span class="code out">&gt</span> eg: <span class="code out">img !>one.png!</span> to <span class="code out">&ltimg src="one.png"&gt</span><br>
+<b>You can declare as many attributes of the different types as long as they are separated by a comma</b>
+</p>
+</div>
+<div class="join col-md-12">
+<h3 class="text-center">Jioning lines</h3>
+<hr>
+<blockquote id="join">
+Due to the fact that TTML produces indented code we also have a flag that allows you to join all the lines of your code at one go<br>
+To initialize put <span class="code out">--j</span> in a new line of your code this will join all lines until the next <span class="code out">--j</span><br>
+If you want to join your whole code then insert this flag as the first line of your code<br>
+</blockquote>
+</div>
+</div>
+</div>
+<script src="assets/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#theme").click(function (){
+$(".pop-menu").toggleClass("active");
+$(this).toggleClass("fa-close fa-bars");
+});
+$(".pop-menu li a").click(function(){
+var tg = $(this).attr("data-target");
+if (tg == "#one"){
+$("#two").removeClass("active");
+}else{
+$("#one").removeClass("active");
+}
+$(tg).toggleClass("active");
+})
+$(".table").hide();
+$(".tagged").click(function (){
+$(".table").slideToggle(600);
+})
+});
+</script>
+</body>
+</html>

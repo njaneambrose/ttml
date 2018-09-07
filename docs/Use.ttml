@@ -1,0 +1,157 @@
+!DOCTYPE html
+  html{
+    &ttml/headers.ttml
+ body{
+   div class="container"{
+    div class="use col-md-12"{
+       h1 class="text-center"{TTML}
+       h3 class="text-center"{Less talk More action}
+       span id="theme" class="fa fa-bars" style="font-size: 26px;cursor:pointer"{}
+       &ttml/menu.ttml
+       hr
+    }
+    div class="main"{
+     h4 !#intro!{This page shows you how to use the TTML gem}
+     h3{Lets get started}
+     hr
+     d !hide!{
+        p{Download and install the ruby interpreter in your computer <a href="http://www.rubylang.org">Download now!</a>}
+	 p{If you already have it go to your command prompt and type:  <span class="code out">gem install ttml</span>}
+	 d !alert alert-success!{Good! lets start, Welcome to the TTML world}
+	  p{For a simple startup and documentation go to the folder that  the gem was installed with, go to the docs folder and initialize the simple server at the file <span class="code out">serverBT.rb</span>}
+	  p{Go to your browser and type the url <b>http://localhost:1776/documentation</b> or <a href="http://localhost:1776/documentation">Click here!</a>}
+	  bq{
+	     #The server at port 1776 offers documentation, how to use the ttml gem and a simple IDE to try out some TTML code
+	   }
+	 p{Go to your favourite Text editor and start enjoying TTML}
+     }
+     h3 !#test!{1. The test method}
+     p{
+     #The test method gives you some kind of REPL environment where you can test various code and see results<br>
+     #This is the perfect place to work before starting serious projects<br>
+     #Check the example below to see:
+     }
+     pre class="code"{
+      # <span class="com">#The following is ruby code</span>
+      # <span class="des">require</span> 'ttml' <span class="com">#requires this file</span>
+      # <span class="des">include</span> TTML <span class="com">#load this module to avoid using TTML::</span>
+      # a =<<_ <span class="com">#this is a simple here document you want to pass into the interpreter</span>
+      # body{
+      #  div class="container"{
+      # p{Hello i am just testing the waters}
+      #  }
+      # }
+      # _
+      # tax = Route.<span class="des">new(</span><span class="in">a</span><span class="des">)</span><span class="com">#we call the Route class with parameter a</span>
+      # <span class="des">puts</span> tax.<span class="des">test</span> <span class="com">#we call the method</span>
+      # <span class="com">#everthing you can do using an actual file you can do it here even imports</span>
+     }
+     h3 !#prototype!{2. The prototype method}
+     hr
+     p{
+     #The prototype method enables you to open a file with TTML code run it but this method does not write output to any file<br>
+     #Good if you are not comfortable writing here documents as for test method<br>
+     #Example below:
+     }
+     pre class="code"{
+      # <span class="com">#The following is ruby code</span>
+      # <span class="des">require</span> 'ttml' <span class="com">#requires this file</span>
+      # <span class="des">include</span> TTML <span class="com">#load this module to avoid using TTML::</span>
+      # tax = Route.<span class="des">new(</span><span class="in">"test.ttml"</span><span class="des">)</span> <span class="com">#we call the Route class with parameter the file test.tax</span>
+      # <span class="des">puts</span> tax.<span class="des">prototype</span> <span class="com">#we call the method</span>
+      # <span class="com">#still there is no limitation feel free to explore</span>
+     }
+     h3 !#pipe!{3. The pipe method}
+     hr
+     P{
+     #This method is used with kind of test method only that you write the output to a file supplied<br>
+     #Just good to show you this works at least some lasting result<br>
+     #Example below:
+     }
+      pre class="code"{
+      # <span class="com">#The following is ruby code</span>
+      # <span class="des">require</span> 'ttml' <span class="com">#requires this file</span>
+      # <span class="des">include</span> TTML<span class="com"> #load this module to avoid using TTML::</span>
+      # a =<<_ <span class="com">#this is a simple here document you want to pass into the interpreter</span>
+      #  body{
+      #  div class="container"{
+      # p{Hello i am just testing the waters}
+      #  }
+      # }
+      # _
+      # tax = Route.<span class="des">new(</span><span class="in">a,false,"test.html"</span><span class="des">)</span> <span class="com">#we call the Route class with parameter a and test.html where the data is written</span>
+      # tax.<span class="des">pipe</span> <span class="com">#we call the method the file is created if not existing and overwritten if existing</span>
+     }
+     h3 !#start!{4. The start method}
+     hr
+     p{
+     #This method is like a full pipe method where you can open a taxi file interpret it then write it to a supplied file<br>
+     #This is the professional way to go if you are working on projects<br>
+     #Example below:
+     }
+      pre class="code"{
+      # <span class="com">#The following is ruby code</span>
+      # <span class="des">require</span> 'ttml' <span class="com">#requires this file</span>
+      # <span class="des">include</span> TTML <span class="com">#load this module to avoid using TTML::</span>
+      # tax = Route.<span class="des">new(</span><span class="in">"test.ttml",false,"test.html"</span><span class="des">)</span> <span class="com">#we call the Route class with two parameters what to interpret and where to write</span>
+      # tax.<span class="des">start</span> <span class="com">#we call the method</span>
+      # <span class="com">#you may supply different files as your desired output eg: xml,xhtml,html,... files</span>
+     }
+	 div !alert alert-info hide!{
+	  #Once you go professoinal create a file with all the configurations to produce diffrent files in your project so that you only double click or run the file and all the files all compiled at one go<br>
+	  #Hence you will focus on producing code and instantly looking at the product even if they are multiple files
+	 }
+     h3 !#dshort!{5. Disabling Shortcuts}
+     hr
+     p{
+      #Shortcuts are useful as they give you faster ways to reach your target<br>
+      #But sometimes may turn against you, check this example of how to pass code for interpretation without shortcuts<br>
+      #To do this you will have to pass all the four variables required.
+     }
+     bq{The variable/file where your TTML code is, true or false for erb, where to output (if you do not output to a file write String.new), true|false for shortcuts}
+     pre !code!{
+         # <span class="com">#for the test method</span>
+        # tax = Route.<span class="des">new(</span><span class="in">a,false,String.new,false</span><span class="des">)</span>
+	# tax.<span class="des">test</span>
+	# <span class="com">#for prototype method</span>
+	# tax = Route.<span class="des">new(</span><span class="in">"test.ttml",false,String.new,false</span><span class="des">)</span>
+	# tax.<span class="des">prototype</span>
+	# <span class="com">#for pipe method</span>
+	# tax = Route.<span class="des">new(</span><span class="in">a,false,"pipe.ttml",false</span><span class="des">)</span>
+	# tax.<span class="des">pipe</span>
+	# <span class="com">#for start method</span>
+	# tax = Route.<span class="des">new(</span><span class="in">"data.ttml",false,"data.xml",false</span><span class="des">)</span>
+	# tax.<span class="des">start</span>
+     }     
+     h3 !#trick,hide!{Simple Trick with the interpreter}
+     hr !hide!
+     p !hide!{
+     #This was not part of the original plan but it actually works<br>
+     #You can actually join different files with the import feature<br>
+     #See the simple example below:
+     }
+     pre class="code hide"{
+      # <span class="com">#The following is ruby code</span>
+      # <span class="des">require</span> 'ttml' <span class="com">#requires this file</span>
+      # <span class="des">include</span> TTML <span class="com">#load this module to avoid using TTML::</span>
+      # a =<<_ <span class="com">#this is a simple here document you want to pass into the interpreter</span>
+      # % <span class="com">#this % prevent our imports from being executed</span>
+      # &file.rb
+      # &file2.rb
+      # &file3.rb
+      # %
+      # _
+      # T = Route.<span class="des">new(</span><span class="in">a, "main.rb"</span><span class="des">)</span> <span class="com">#we call the Route class with parameter a and test.html where the data is written</span>
+      # T.<span class="des">pipe</span> <span class="com">#we call the method</span>
+      # <span class="com">#this opens all the files supplied as imports and writes the to main.rb done! all files are joined</span>
+     }
+    }
+   }
+  }
+  script src="assets/jquery.js"{}
+  script{
+   %
+   &assets/script.js
+   %
+  }
+ }
