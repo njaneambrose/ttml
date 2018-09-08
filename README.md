@@ -44,6 +44,19 @@ The ttml gem allows you to just write the skeleton of Markup then converts it to
 You see it can never get easier and this is just a tip of the iceberg
 
 TTML can be used for any project whether to generate XML files or even Webpages.
+TTML supports erb templating to help produce Markup dynamically check the example below:
+    
+    --ERB--
+    tbl border="3"{
+       <%ENV.keys.each do |e|%> 
+          tr{
+             th{<%=e%>}
+             td{<%=ENV[e]%>}
+          }
+       <%end%>
+    }
+    
+ERB is not enabled by default hence you must configure in your options before compiling    
 
 [Check more examples here](https://github.com/njaneambrose/ttml/blob/master/docs/Documentation.html)
 
