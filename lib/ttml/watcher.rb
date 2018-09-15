@@ -3,7 +3,7 @@ include TTML
 
 class Watcher
 #=Watcher
-#This is a simple file watcher that automatically complies your TTML code when the file chages
+#This is a simple file watcher that automatically complies your TTML code when the file changes
 #
 #Use watcher to automatically converts use this Watcher works with files only not the other methods
 #

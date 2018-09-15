@@ -58,6 +58,7 @@ border:2px solid #aaa;background:#333;color:gold}
 <li><a href="use.html#prototype">prototype method</a></li>
 <li><a href="use.html#pipe">pipe method</a></li>
 <li><a href="use.html#start">start method</a></li>
+<li><a href="use.html#watcher">using watcher</a></li>
 <li><a href="use.html#dshort">Disabling shortcuts</a></li>
 <li class="hide"><a href="use.html#trick">Simple trick</a></li>
 </ul>
@@ -159,6 +160,12 @@ Example below:
  tax = Route.<span class="des">new(</span><span class="in">"test.ttml","test.html"</span><span class="des">)</span> <span class="com">#we call the Route class with two parameters what to interpret and where to write</span>
  tax.<span class="des">start</span> <span class="com">#we call the method</span>
  <span class="com">#you may supply different files as your desired output eg: xml,xhtml,html,... files</span>
+</pre>
+<p>You can also use Watcher to compile in the start method,it automatically converts your file once it changes</p>
+<pre id="watcher" class="code">
+ <span class="des">require</span> 'ttml/watcher' <span class="com">#requires this file</span>
+  wt = Watcher.<span class="des">new(</span><span class="in">"test.ttml","test.html",false,true</span><span class="des">)</span><span class="com">#the parameters here are the same as for calling the Route class</span>
+  wt.<span class="des">start</span> <span class="com">#this starts the watcher default recompile time is 5 seconds but you can change e.g: wt.start(10) to make it recompile after 10 seconds
 </pre>
 <div class="alert alert-info hide">
 Once you go professoinal create a file with all the configurations to produce diffrent files in your project so that you only double click or run the file and all the files all compiled at one go<br>

@@ -18,6 +18,7 @@ div class="pop-menu col-md-3"{
        li{<a href="use.html#prototype">prototype method</a>}
        li{<a href="use.html#pipe">pipe method</a>}
        li{<a href="use.html#start">start method</a>}
+       li{<a href="use.html#watcher">using watcher</a>}
        li{<a href="use.html#dshort">Disabling shortcuts</a>}
        li !hide!{<a href="use.html#trick">Simple trick</a>}
       }

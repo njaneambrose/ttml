@@ -99,6 +99,12 @@
       # tax.<span class="des">start</span> <span class="com">#we call the method</span>
       # <span class="com">#you may supply different files as your desired output eg: xml,xhtml,html,... files</span>
      }
+      p{You can also use Watcher to compile in the start method,it automatically converts your file once it changes}
+      pre !code,#watcher!{
+      # <span class="des">require</span> 'ttml/watcher' <span class="com">#requires this file</span>
+      #  wt = Watcher.<span class="des">new(</span><span class="in">"test.ttml","test.html",false,true</span><span class="des">)</span><span class="com">#the parameters here are the same as for calling the Route class</span>
+      #  wt.<span class="des">start</span> <span class="com">#this starts the watcher default recompile time is 5 seconds but you can change e.g: wt.start(10) to make it recompile after 10 seconds 
+      }
 	 div !alert alert-info hide!{
 	  #Once you go professoinal create a file with all the configurations to produce diffrent files in your project so that you only double click or run the file and all the files all compiled at one go<br>
 	  #Hence you will focus on producing code and instantly looking at the product even if they are multiple files
