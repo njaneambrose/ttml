@@ -27,7 +27,7 @@ class Watcher
 		  before.replace ""
 			File.open("#{@infile}"){|e| before << e.read}
 			if !(before.eql? after)
-			  x = Route.new(@infile,@erb,@outfile,@shortcut)
+			  x = Route.new(@infile,@outfile,@erb,@shortcut)
 				x.start
 				puts "#{Time.now} : compiled #{@infile} to #{@outfile}"
 			end
