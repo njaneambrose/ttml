@@ -8,7 +8,7 @@ require 'ttml'
 include TTML
 
 class Watcher
-  def initialize(infile,erb=false,outfile,shortcut=true)
+  def initialize(infile,outfile,erb=false,shortcut=true)
 	  @infile = infile
 		@outfile = outfile
 		@erb = erb
@@ -19,7 +19,7 @@ class Watcher
 		after = ""
 	  loop do
 		  before.replace ""
-			File.open("#{@infile}",{|e| before << e.read})
+			File.open("#{@infile}"){|e| before << e.read}
 			if !(before.eql? after)
 			  x = Route.new(@infile,@erb,@outfile,@shortcut)
 				x.start
