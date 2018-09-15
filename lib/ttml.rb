@@ -113,10 +113,10 @@ module TTML
 #
 #== 5. Using erb
 #Just add true to your options
-#   T = Route.new(a,String.new,false) #for test method
-#   T = Route.new("test.ttml",String.new,false) #for prototype method
-#   T = Route.new(a,"test.html",false) #for pipe method
-#   T = Route.new("test.ttml","test.html",false) #for the start method
+#   T = Route.new(a,String.new,true) #for test method
+#   T = Route.new("test.ttml",String.new,true) #for prototype method
+#   T = Route.new(a,"test.html",true) #for pipe method
+#   T = Route.new("test.ttml","test.html",true) #for the start method
 #
 #==5. Disabling Shortcuts
 #The TTML module also allows you to run your TTML code without shortcuts check the syntax below:
