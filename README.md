@@ -30,9 +30,9 @@ The ttml gem allows you to just write the skeleton of Markup then converts it to
      --p x = y                    => <meta property="x" content="y"/>
      
      doc5  => <!DOCTYPE html>
-     xml   => <?xml version="1.0" encoding="UTF-8"/>
+     xml   => <?xml version="1.0" encoding="UTF-8"?/>
      utf8  => <meta charset="UTF-8"/>
-     view1 => <meta name="viewport" content="width=device-width,initial-scale=1.0"?/>
+     view1 => <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
      
      --XML--
      
@@ -56,7 +56,26 @@ TTML supports erb templating to help produce Markup dynamically check the exampl
        <%end%>
     }
     
-ERB is not enabled by default hence you must configure in your options before compiling    
+ERB is not enabled by default hence you must configure in your options before compiling
+
+The TTML gem can also be used to scaffold your code before starting to work on a project by placing the code between % code goes here % e.g:<br>
+You want to create a ruby file quickly just do the following:
+
+    --Scaffold--
+    % => this prevented code from being compiled until the next %
+    module Home
+        class Leave
+        <%e = %w{goHome setime leave reverse tos}%>
+        <%e.foreach do |r|%>
+            def <%=r%>
+            end
+        <%end%>
+        end
+    end
+    &ruby/sub_module.rb => adds the code in this file to the final product
+    %
+
+Run the compiler with options to produce a ruby file compile then open the final product, your file is ready to go!
 
 [Check more examples here](https://github.com/njaneambrose/ttml/blob/master/docs/Documentation.html)
 
