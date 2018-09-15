@@ -1,10 +1,11 @@
 require "ttml/version"
 require "ttml/shortcut"
 require "erb"
-#= TTML(Taxi To Markup Language) [file extension: (*.ttml)]
+#= TTML(Taxi To Markup Language) 
+#===file extension: (*.ttml)
 #
 #TTML is a lighweight language that complies to Markup, TTML helps produce markup in a faster, simpler and cleaner way, 
-#basically you write the skeleton of a markup and it converts it into the actual markup that you had desired on the fly
+#basically you write the skeleton of  markup and it converts it into the actual markup that you had desired on the fly
 #
 #TTML supports erb templates so you can use it here but you have to enable erb during execution so that it can be processed
 #check TTML::Route.new
@@ -64,6 +65,8 @@ module TTML
 #= Usage
 #The TTML module provides you with four ways of running your TTML code 
 #the following is a quick review of the methods
+#
+#The general syntax is TTML::Route.new(input,output,erb=true/default{false},shortcut=default{true}/false)
 #==1. The test method
 #This method is provides some kind of REPL environment to play with TTML code check below:
  # require 'ttml' 
@@ -96,29 +99,38 @@ module TTML
 #    }
 #  }
 #  _
-# T = Route.new(a,false,"test.html") #we call the Route class with parameter a(our String) and test.html where the data is written
+# T = Route.new(a,"test.html") #we call the Route class with parameter a(our String) and test.html where the output is written
 # T.pipe #we call the method the file is created if not existing and overwritten if existing
 #== 4. The start method
 #This method is used to run a TTML file and  write the output to a file
 #    require 'ttml'
 #    include TTML #load this module to avoid using TTML::
-#    T = Route.new("test.ttml",false,"test.html") #we call the Route class with two parameters, the test.tml file and where to write output to
+#    T = Route.new("test.ttml","test.html") #we call the Route class with two parameters, the test.tml file and where to write output to
 #    T.start #we call the method
 #    #you may supply different files as your desired output eg: xml,xhtml,html,... files
+#
+#You can use Watcher to compile your files here check Watcher
+#
+#== 5. Using erb
+#Just add true to your options
+#   T = Route.new(a,String.new,false) #for test method
+#   T = Route.new("test.ttml",String.new,false) #for prototype method
+#   T = Route.new(a,"test.html",false) #for pipe method
+#   T = Route.new("test.ttml","test.html",false) #for the start method
 #
 #==5. Disabling Shortcuts
 #The TTML module also allows you to run your TTML code without shortcuts check the syntax below:
 # #for the test method
-# T = Route.new(a,false,String.new,false)
+# T = Route.new(a,String.new,false,false)
 #  T.test
 #  #for prototype method
-# T = Route.new("test.ttml",false,String.new,false)
+# T = Route.new("test.ttml",String.new,false,false)
 # T.prototype
 # #for pipe method
-# T = Route.new(a,false,"pipe.xml",false)
+# T = Route.new(a,"pipe.xml",false,false)
 # T.pipe
 # #for start method
-# T = Route.new("data.ttml",false,"data.xml",false)
+# T = Route.new("data.ttml","data.xml",false,false)
 # T.start
 #
 #==Copyright
@@ -126,7 +138,7 @@ module TTML
 #--
 class Route
 #call the method with your parameters this depends whether you want shortcuts or not and also configure erb
-	def initialize(infile,erb=false,outfile=String.new,shortcut=true)
+	def initialize(infile,outfile=String.new,erb=false,shortcut=true)
 	   @tag_array = Array.new 
 	   @exec = true 
 	   @infile = infile 
@@ -206,10 +218,13 @@ class Route
  end
 #This is the core of operation that handles all lines and dispatches them for processing
  def converter(a, b)
-		a.each{|line| line.replace line.rstrip;line = line.gsub "\t", "    "
+		a.each{|line| line.replace line.rstrip
+		   if [/\t/] == "  " then line = line.gsub "\t", "  "
+			 elsif [/\t/] == "    " then line = line.gsub "\t", "    "
+			 else line = line.gsub "\t", "  " end
 		   bf=String.new;line = line.to_s;bf<<line;bf.strip!;
 		   if @exec
-			   if !bf[/^%/] and !bf[/^#/] and !bf[/}/] and !line[/{/] and !line.empty? and !bf[/^&/] and !bf[/^--/] and !bf[/^<%/] and !bf[/^!/]
+			   if !bf[/^%/] and !bf[/^#/] and !bf[/}/] and !bf[/{/] and !bf.empty? and !bf[/^&/] and !bf[/^--/] and !bf[/^<%/] and !bf[/^!/]
 					out = machine1(line)
 					b << out
 			   elsif bf[/^--j/]

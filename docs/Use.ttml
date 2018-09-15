@@ -25,6 +25,8 @@
 	   }
 	 p{Go to your favourite Text editor and start enjoying TTML}
      }
+     h3{Compile rule: }
+    bq{The <b>variable/file where your TTML code</b> is, <b>where to output</b> (if you do not output to a file write String.new), <b>true|false for erb</b>, <b>true|false for shortcuts</b>}
      h3 !#test!{1. The test method}
      p{
      #The test method gives you some kind of REPL environment where you can test various code and see results<br>
@@ -79,7 +81,7 @@
       #  }
       # }
       # _
-      # tax = Route.<span class="des">new(</span><span class="in">a,false,"test.html"</span><span class="des">)</span> <span class="com">#we call the Route class with parameter a and test.html where the data is written</span>
+      # tax = Route.<span class="des">new(</span><span class="in">a,"test.html"</span><span class="des">)</span> <span class="com">#we call the Route class with parameter a and test.html where the data is written</span>
       # tax.<span class="des">pipe</span> <span class="com">#we call the method the file is created if not existing and overwritten if existing</span>
      }
      h3 !#start!{4. The start method}
@@ -93,7 +95,7 @@
       # <span class="com">#The following is ruby code</span>
       # <span class="des">require</span> 'ttml' <span class="com">#requires this file</span>
       # <span class="des">include</span> TTML <span class="com">#load this module to avoid using TTML::</span>
-      # tax = Route.<span class="des">new(</span><span class="in">"test.ttml",false,"test.html"</span><span class="des">)</span> <span class="com">#we call the Route class with two parameters what to interpret and where to write</span>
+      # tax = Route.<span class="des">new(</span><span class="in">"test.ttml","test.html"</span><span class="des">)</span> <span class="com">#we call the Route class with two parameters what to interpret and where to write</span>
       # tax.<span class="des">start</span> <span class="com">#we call the method</span>
       # <span class="com">#you may supply different files as your desired output eg: xml,xhtml,html,... files</span>
      }
@@ -108,19 +110,19 @@
       #But sometimes may turn against you, check this example of how to pass code for interpretation without shortcuts<br>
       #To do this you will have to pass all the four variables required.
      }
-     bq{The variable/file where your TTML code is, true or false for erb, where to output (if you do not output to a file write String.new), true|false for shortcuts}
+     bq{The variable/file where your TTML code is,where to output (if you do not output to a file write String.new),true or false for erb, true|false for shortcuts}
      pre !code!{
          # <span class="com">#for the test method</span>
-        # tax = Route.<span class="des">new(</span><span class="in">a,false,String.new,false</span><span class="des">)</span>
+        # tax = Route.<span class="des">new(</span><span class="in">a,String.new,false,false</span><span class="des">)</span>
 	# tax.<span class="des">test</span>
 	# <span class="com">#for prototype method</span>
-	# tax = Route.<span class="des">new(</span><span class="in">"test.ttml",false,String.new,false</span><span class="des">)</span>
+	# tax = Route.<span class="des">new(</span><span class="in">"test.ttml",String.new,false,false</span><span class="des">)</span>
 	# tax.<span class="des">prototype</span>
 	# <span class="com">#for pipe method</span>
-	# tax = Route.<span class="des">new(</span><span class="in">a,false,"pipe.ttml",false</span><span class="des">)</span>
+	# tax = Route.<span class="des">new(</span><span class="in">a,"pipe.ttml",false,false</span><span class="des">)</span>
 	# tax.<span class="des">pipe</span>
 	# <span class="com">#for start method</span>
-	# tax = Route.<span class="des">new(</span><span class="in">"data.ttml",false,"data.xml",false</span><span class="des">)</span>
+	# tax = Route.<span class="des">new(</span><span class="in">"data.ttml","data.xml",false,false</span><span class="des">)</span>
 	# tax.<span class="des">start</span>
      }     
      h3 !#trick,hide!{Simple Trick with the interpreter}

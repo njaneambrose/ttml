@@ -293,8 +293,8 @@ TTML offers native support for ERB templating you can add erb code in your file 
 The erb is executed during interpretation to Markup, but to do this you have <b>to initialize the Route class with true parameter as erb is not enabled by default</b><br>
 Use the following:<br>
 <div class="alert alert-success">
-tax = Route.new(a,true)   for test and prototype methods<br>
-tax = Route.new("test.ttml",true,"test.html") for pipe and start methods
+tax = Route.new(a,String.new,true)   for test and prototype methods<br>
+tax = Route.new("test.ttml","test.html",true) for pipe and start methods
 <br>
 You can use ERB to format the output to tags eg: mathematical operations and string formats eg: sp{<%="Hello".reverse%>} or sp{<%=566*5666%>}<br>
 </div>
