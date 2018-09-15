@@ -66,7 +66,7 @@ class Test < HTTPServlet::AbstractServlet
        end 
     d = String.new
     last = String.new
-       p= Route.new(e,erb,String.new,cut)
+    p= Route.new(e,String.new,erb,cut)
 	   d << p.test
       rsp['Content-Type'] = 'text/html'
       rsp.body = d
