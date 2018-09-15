@@ -8,7 +8,7 @@ require 'ttml'
 include TTML
 
 class Watcher
-  def initilaize(infile,erb=false,outfile,shortcut=true)
+  def initialize(infile,erb=false,outfile,shortcut=true)
 	  @infile = infile
 		@outfile = outfile
 		@erb = erb
