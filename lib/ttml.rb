@@ -71,13 +71,13 @@ module TTML
 #This method is provides some kind of REPL environment to play with TTML code check below:
  # require 'ttml' 
  # include TTML #load this module to avoid using TTML::
-#  a =<<_ #this is a simple here document you want to pass into the interpreter
+#  a =<<M #this is a simple here document you want to pass into the interpreter
 #   body{
 #     div class="container"{
 #       p{Hello i am just testing the waters}
 #   }
 #  }
-#  _
+#  M
  # T = Route.new(a)#we call the Route class with parameter a(our string with TTML code)
  # puts T.test #prints output
  # #everything you can do using an actual file you can do it here even imports
@@ -92,13 +92,13 @@ module TTML
 #This is like test method only that the output is written to a file
 #  require 'ttml' 
 #  include TTML #load this module to avoid using TTML::
-#  a =<<_ #this is a simple here document you want to pass into the interpreter
+#  a =<<M #this is a simple here document you want to pass into the interpreter
 #   body{
 #       div class="container"{
 #          p{Hello i am just testing the waters}
 #    }
 #  }
-#  _
+#  M
 # T = Route.new(a,"test.html") #we call the Route class with parameter a(our String) and test.html where the output is written
 # T.pipe #we call the method the file is created if not existing and overwritten if existing
 #== 4. The start method
