@@ -23,7 +23,7 @@ doc5
 	 #For launch erb and shortcut must always be checked<br>
 	}
 	d !col-md-12!{
-	fm method="get" action="/test"{
+	fm method="post" action="/test"{
 	d !col-md-12!{
 	    d !col-md-4!{
 		label !control-label!{ERB}

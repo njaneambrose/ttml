@@ -49,7 +49,7 @@ class BreakT < HTTPServlet::AbstractServlet
  end
 end
 class Test < HTTPServlet::AbstractServlet
-  def do_GET(rq,rsp)
+  def do_POST(rq,rsp)
     if rq.query['q']
 	e = URI.decode(rq.query['q'])
     erb = rq.query['erb'];
