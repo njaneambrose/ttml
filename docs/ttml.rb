@@ -1,4 +1,4 @@
-require '/msys64/home/web development/ruby/breaktime'
+require './breaktime'
 include BreakTime
  T = Doc.new("Documentation.ttml", "Documentation.html")
  T.start

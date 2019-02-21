@@ -156,7 +156,7 @@
     }
    }
   }
-  script src="assets/jquery.js"{}
+  script src="/assets/jquery.js"{}
   script{
    %
    &assets/script.js

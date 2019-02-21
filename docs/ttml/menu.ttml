@@ -1,32 +1,32 @@
 div class="pop-menu col-md-3"{
    ul !nav col-md-8 col-md-offset-2 sub-menu,#one!{
-       li{<a href="Documentation.html#intro">Introduction</a>}
-       li{<a href="Documentation.html#html">HTML</a>}
-       li{<a href="Documentation.html#xhtml">XHTML</a>}
-       li{<a href="Documentation.html#examples">Examples</a>}
-	   li{<a href="Documentation.html#erb">ERB</a>}
-       li{<a href="Documentation.html#mark">XML</a>}
-       li{<a href="Documentation.html#imports">Imports</a>}
-       li{<a href="Documentation.html#short">Shortcuts</a>}
-       li !hide!{<a href="Documentation.html#tags">User defined tags</a>}
-       li{<a href="Documentation.html#attr">Attributes</a>}
-       li{<a href="Documentation.html#join">Join lines</a>}
+       li{<a href="/Documentation.html#intro">Introduction</a>}
+       li{<a href="/Documentation.html#html">HTML</a>}
+       li{<a href="/Documentation.html#xhtml">XHTML</a>}
+       li{<a href="/Documentation.html#examples">Examples</a>}
+	   li{<a href="/Documentation.html#erb">ERB</a>}
+       li{<a href="/Documentation.html#mark">XML</a>}
+       li{<a href="/Documentation.html#imports">Imports</a>}
+       li{<a href="/Documentation.html#short">Shortcuts</a>}
+       li !hide!{<a href="/Documentation.html#tags">User defined tags</a>}
+       li{<a href="/Documentation.html#attr">Attributes</a>}
+       li{<a href="/Documentation.html#join">Join lines</a>}
      }
      ul !nav col-md-8 col-md-offset-2 sub-menu,#two!{
-       li{<a href="use.html#intro">Introduction</a>}
-       li{<a href="use.html#test">test method</a>}
-       li{<a href="use.html#prototype">prototype method</a>}
-       li{<a href="use.html#pipe">pipe method</a>}
-       li{<a href="use.html#start">start method</a>}
-       li{<a href="use.html#watcher">using watcher</a>}
-       li{<a href="use.html#dshort">Disabling shortcuts</a>}
-       li !hide!{<a href="use.html#trick">Simple trick</a>}
+       li{<a href="/use.html#intro">Introduction</a>}
+       li{<a href="/use.html#test">test method</a>}
+       li{<a href="/use.html#prototype">prototype method</a>}
+       li{<a href="/use.html#pipe">pipe method</a>}
+       li{<a href="/use.html#start">start method</a>}
+       li{<a href="/use.html#watcher">using watcher</a>}
+       li{<a href="/use.html#dshort">Disabling shortcuts</a>}
+       li !hide!{<a href="/use.html#trick">Simple trick</a>}
       }
   ul class="nav"{
     li {<a data-target="#one">Documentation</a>}
     li class="nav-divider"{}
     li{<a data-target="#two">Get started</a>}
     li class="nav-divider"{}
-   li{<a href="try.html">Try it here!</a>}
+   li{<a href="/try.html">Try it here!</a>}
 }
 }

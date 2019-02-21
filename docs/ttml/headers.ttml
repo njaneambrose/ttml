@@ -4,8 +4,8 @@ head{
  meta name="Viewport" content="width=device-width, initial-scale=1.0"
  meta name="description" content="Information concerning the release of TTML"
  title{TTML}
- link rel="stylesheet" href="assets/bootstrap.css"
- link rel="stylesheet" href="assets/font.css"
+ link rel="stylesheet" href="/assets/bootstrap.css"
+ link rel="stylesheet" href="/assets/font.css"
  style{
  %
  .container{overflow: hidden}

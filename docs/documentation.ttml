@@ -466,7 +466,7 @@ div class="intro"{
     }
    }
   }
- script src="assets/jquery.js"{}
+ script src="/assets/jquery.js"{}
  script type="text/javascript"{
  %
  &assets/script.js

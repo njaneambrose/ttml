@@ -46,8 +46,8 @@ doc5
       }	
       }
    }
-   scp src="assets/jquery.js"{}
-    scp src="assets/process.js"{}
+   scp src="/assets/jquery.js"{}
+    scp src="/assets/process.js"{}
    scp{
    %
    &assets/script.js
